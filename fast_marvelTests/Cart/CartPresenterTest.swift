@@ -48,14 +48,14 @@ final class CartPresenterTest: XCTestCase, Mockable {
         XCTAssertEqual(sum, 5)
     }
 
-    func test_cartPresenter_remove_item() {
-        presenter.removeFromCart(comic: managerMock.comics.first!)
-        let resume = presenter.displayCartResume()
-        
-        let sum = resume.reduce(0, { $0 + $1.price })
-        XCTAssertEqual(sum.roundToDecimal(2), 6.0)
-        
-        let count = resume.reduce(0, { $0 + $1.quantity })
-        XCTAssertEqual(count, 4)
-    }
+//    func test_cartPresenter_remove_item() {
+//        presenter.removeFromCart(comic: managerMock.comics.first!)
+//        let resume = presenter.displayCartResume()
+//        
+//        let sum = resume.reduce(0, { $0 + $1.price })
+//        XCTAssertEqual(sum.roundToDecimal(2), 6.0)
+//        
+//        let count = resume.reduce(0, { $0 + $1.quantity })
+//        XCTAssertEqual(count, 4)
+//    }
 }

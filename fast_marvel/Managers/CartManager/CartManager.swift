@@ -40,6 +40,10 @@ class CartManager {
                 $0.type == "printPrice"
             })?.price ?? 0
         }
+        
+        if cartTotal < 0 {
+            cartTotal = 0
+        }
     }
     
     func createCartResume() -> [CartResume] {
@@ -74,6 +78,6 @@ class CartManager {
     
     func emptyCart() {
         self.comics = []
-        self.cartTotal = 0
+        self.cartTotal = Double.zero
     }
 }

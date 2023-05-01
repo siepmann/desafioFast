@@ -139,26 +139,18 @@ class CartResumeTableViewCell: UITableViewCell {
     }
     
     @objc func addItemToCart() {
-        if let comic = CartManager.shared.comics.first(where: { $0.id == self.resume.id }) {
-            CartManager.shared.addToCart(comic: comic)
-        }
-        
-        delegate?.displayCart(resume: CartManager.shared.createCartResume())
+        delegate?.changeCart(comicId: self.resume.id,
+                             action: .add)
     }
     
     @objc func removeItemFromCart() {
-        if let comic = CartManager.shared.comics.first(where: { $0.id == self.resume.id }) {
-            CartManager.shared.removeFromCart(comic: comic)
-        }
-        
-        delegate?.displayCart(resume: CartManager.shared.createCartResume())
+        delegate?.changeCart(comicId: self.resume.id,
+                             action: .remove)
     }
     
     @objc func removeProductFromCart() {
-        CartManager.shared.comics.filter { $0.id == self.resume.id }.forEach {
-            CartManager.shared.removeFromCart(comic: $0)
-        }
-       
-        delegate?.displayCart(resume: CartManager.shared.createCartResume())
+        delegate?.changeCart(comicId: self.resume.id,
+                             action: .removeALl)
+
     }
 }

@@ -40,6 +40,8 @@
 		945322AB2A001E860024193D /* FavoritesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945322AA2A001E860024193D /* FavoritesPresenterMock.swift */; };
 		945322AD2A0022660024193D /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945322AC2A0022660024193D /* HomePresenterMock.swift */; };
 		945322B02A002B2D0024193D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945322AF2A002B2D0024193D /* ProgressView.swift */; };
+		949B6D352A00722F009CD350 /* CartControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B6D342A00722F009CD350 /* CartControllerTest.swift */; };
+		949B6D382A0072EB009CD350 /* CartDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B6D372A0072EB009CD350 /* CartDatasource.swift */; };
 		94BECC6C29FDC08A00EDC354 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BECC6B29FDC08A00EDC354 /* CartManager.swift */; };
 		94BECC7229FDCC3E00EDC354 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BECC7129FDCC3E00EDC354 /* CartPresenter.swift */; };
 		94BECC7429FDCEEB00EDC354 /* CartPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BECC7329FDCEEB00EDC354 /* CartPresenterTest.swift */; };
@@ -103,6 +105,8 @@
 		945322AA2A001E860024193D /* FavoritesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterMock.swift; sourceTree = "<group>"; };
 		945322AC2A0022660024193D /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
 		945322AF2A002B2D0024193D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		949B6D342A00722F009CD350 /* CartControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartControllerTest.swift; sourceTree = "<group>"; };
+		949B6D372A0072EB009CD350 /* CartDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDatasource.swift; sourceTree = "<group>"; };
 		94BECC6B29FDC08A00EDC354 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		94BECC7129FDCC3E00EDC354 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		94BECC7329FDCEEB00EDC354 /* CartPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenterTest.swift; sourceTree = "<group>"; };
@@ -386,6 +390,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		949B6D362A0072D9009CD350 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				949B6D372A0072EB009CD350 /* CartDatasource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		94BECC6929FDC00B00EDC354 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +421,7 @@
 			children = (
 				94BECC7329FDCEEB00EDC354 /* CartPresenterTest.swift */,
 				94BECC7529FDD4B400EDC354 /* CartManagerTest.swift */,
+				949B6D342A00722F009CD350 /* CartControllerTest.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -416,6 +429,7 @@
 		94BECC7029FDCC3700EDC354 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				949B6D362A0072D9009CD350 /* DataSource */,
 				94BECC7B29FDF2E100EDC354 /* Cell */,
 				94BECC7829FDD6D100EDC354 /* ViewController */,
 				94BECC7729FDD6C800EDC354 /* Presenter */,
@@ -588,6 +602,7 @@
 				9408BEA829F94CBA00810311 /* ComicDetailViewController.swift in Sources */,
 				945322A429FF0CC10024193D /* UICollectionView.swift in Sources */,
 				9417C04E29F6E37A00B5AA8B /* RequestErrorModel.swift in Sources */,
+				949B6D382A0072EB009CD350 /* CartDatasource.swift in Sources */,
 				94BECC6C29FDC08A00EDC354 /* CartManager.swift in Sources */,
 				9408BEBC29F9F77D00810311 /* FavoritesPresenter.swift in Sources */,
 				945322A129FF0B780024193D /* UITableView.swift in Sources */,
@@ -623,6 +638,7 @@
 				943EB81329FC2D44006BBE72 /* ComicDetailViewControllerTests.swift in Sources */,
 				943EB81829FC3CBE006BBE72 /* FavoritesViewControllerTest.swift in Sources */,
 				94CB22E129F74C0B002ECB78 /* Mockable.swift in Sources */,
+				949B6D352A00722F009CD350 /* CartControllerTest.swift in Sources */,
 				94BECC7429FDCEEB00EDC354 /* CartPresenterTest.swift in Sources */,
 				945322AB2A001E860024193D /* FavoritesPresenterMock.swift in Sources */,
 				9408BECB29FB15F400810311 /* ComicDataSourceTest.swift in Sources */,

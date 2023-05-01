@@ -175,7 +175,7 @@ class ComicDetailViewController: UIViewController {
         if let filteredPrices = comic.prices?.filter({
             ($0.type ?? "").localizedCaseInsensitiveContains("printPrice")
         }), let first = filteredPrices.first {
-            self.priceLabel.text = "Price USD \(first.price?.toString() ?? "0.00")"
+            self.priceLabel.text = "Price USD \(first.price ?? 0)"
             
             if first.price == 0 {
                 self.disableBuyButton()

@@ -390,7 +390,7 @@
         "prices": [
           {
             "type": "printPrice",
-            "price": 0
+            "price": 2
           },
           {
             "type": "digitalPurchasePrice",
@@ -1843,7 +1843,7 @@
         "prices": [
           {
             "type": "printPrice",
-            "price": 0
+            "price": 10
           }
         ],
         "thumbnail": {
@@ -1936,7 +1936,7 @@
         "prices": [
           {
             "type": "printPrice",
-            "price": 0
+            "price": 10
           }
         ],
         "thumbnail": {

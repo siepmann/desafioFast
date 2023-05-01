@@ -52,6 +52,7 @@ class CartResumeViewController: UIViewController {
 
     private var resume: [CartResume] = []
     private var presenter: CartPresenterProtocol?
+    private lazy var datasource = CartDataSource(resume: [], delegate: self)
     
     init(presenter: CartPresenterProtocol) {
         self.presenter = presenter
@@ -71,7 +72,7 @@ class CartResumeViewController: UIViewController {
         self.view.backgroundColor = .white
         self.title = "Cart"
         
-        self.tableView.dataSource = self
+        self.tableView.dataSource = datasource
         self.tableView.delegate = self
         
         self.tableView.register(CartResumeTableViewCell.self, forCellReuseIdentifier: "resumeCell")
@@ -81,7 +82,7 @@ class CartResumeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.resume = self.presenter?.displayCartResume() ?? []
+        self.datasource.resume = self.presenter?.displayCartResume() ?? []
         self.tableView.reloadData()
     }
     
@@ -135,37 +136,19 @@ class CartResumeViewController: UIViewController {
     }
 }
 
-extension CartResumeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if resume.count == 0 {
-            tableView.setEmptyView(type: .cart)
-        } else {
-            tableView.restore()
-        }
-        
-        return resume.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "resumeCell", for: indexPath) as? CartResumeTableViewCell {
-            cell.setupCell(resume: resume[indexPath.row], delegate: self)
-                       
-            return cell
-        }
-        return UITableViewCell()
-    }
-}
-
 extension CartResumeViewController: UITableViewDelegate {
-   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
 extension CartResumeViewController: CartPresentable {
+    func changeCart(comicId: Int, action: CartActionType) {
+        self.presenter?.changeCart(comicId: comicId, action: action)
+    }
+    
     func displayCart(resume: [CartResume]) {
-        self.resume = resume
+        self.datasource.resume = resume
         self.totalLabel.text = "Total USD \(CartManager.shared.cartTotal.toString())"
         self.tableView.reloadData()
     }
